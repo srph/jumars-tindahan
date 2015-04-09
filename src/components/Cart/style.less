@@ -1,0 +1,92 @@
+.cart {
+  position: fixed;
+
+  /**
+   * /-----------------\
+   * Background (outer)
+   * \-----------------/
+   */
+
+  .box {
+    background: @color-info;
+    padding: 20;
+  }
+
+  /**
+   * /-----------------\
+   * List
+   * \-----------------/
+   */
+
+  .box > .list {
+    .row;
+  }
+
+  .box > .list > .name {
+    .col-md-5;
+    // ellipsis sshit
+  }
+
+  .box > .list > .price {
+    .col-md-2;
+  }
+
+  .box > .list > .qt {
+    .col-md-2;
+  }
+
+  .box > .list > .options {
+    .col-md-3;
+  }
+
+  .box > .list > .options > .decrease-btn {
+    .btn;
+    .btn-warning;
+  }
+
+  .box > .list > .options > .delete-btn {
+    .btn;
+    .btn-danger;
+  }
+
+  /**
+   * /-----------------\
+   * List Blank
+   * \-----------------/
+   */
+
+   .box > .list-blank {
+    display: table;
+    height: 200px;
+  }
+
+  .box > .list-blank > .inner {
+    display: table-cell;
+    vertical-align: center;
+    .text-center;
+  }
+
+  /**
+   * /-----------------\
+   * Floating Button Actions
+   * \-----------------/
+   */
+   
+  .actions {
+    .clearfix();
+    position: absolute;
+    bottom: -20px;
+  }
+
+  .actions > .clear-btn {
+    .pull-left;
+    .btn;
+    .btn-danger;
+  }
+
+  .actions > .checkout-btn {
+    .pull-right;
+    .btn;
+    .btn-success;
+  }
+}

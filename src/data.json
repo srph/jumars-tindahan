@@ -1,0 +1,16 @@
+[
+  { "id": 1, "category": "Chichirya", "name": "Cheap Chips", "price": 1.00, "img": "cheap-chips.jpg" },
+  { "id": 2, "category": "Drinks", "name": "Coke Litro", "price": 1.00, "img": "coke-l.jpg" },
+  { "id": 3, "category": "Drinks", "name": "Coke Sakto", "price": 1.00, "img": "coke-s.jpg" },
+  { "id": 4, "category": "Drinks", "name": "Coke Mismo", "price": 1.00, "img": "coke-m.jpg" },
+  { "id": 5, "category": "Chichirya", "name": "Ser Cheaps", "price": 1.00, "img": "ser-cheaps.jpg" },
+  { "id": 6, "category": "Chichirya", "name": "Nova (Small)", "price": 1.00, "img": "nova-s.jpg" },
+  { "id": 7, "category": "Chichirya", "name": "Nova (Large)", "price": 1.00, "img": "nova-l.jpg" },
+  { "id": 8, "category": "Chichirya", "name": "Piattos (Small)", "price": 1.00, "img": "piattos-s.jpg" },
+  { "id": 9, "category": "Chichirya", "name": "Piattos (Large)", "price": 1.00, "img": "piattos-l.jpg" },
+  { "id": 10, "category": "Chichirya", "name": "Puto Seco", "price": 1.00, "img": "puto-seco.jpg" },
+  { "id": 11, "category": "Chichirya", "name": "Stick-O", "price": 1.00, "img": "stick-o.jpg" },
+  { "id": 12, "category": "Chichirya", "name": "Hany Bar (Small)", "price": 1.00, "img": "hany-bar-s.jpg" },
+  { "id": 13, "category": "Chichirya", "name": "Hany Bar (Large)", "price": 1.00, "img": "hany-bar-l.jpg" },
+  { "id": 14, "category": "Chichirya", "name": "Hany Bar (Large)", "price": 1.00, "img": "hany-bar-l.jpg" }
+]
