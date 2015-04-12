@@ -14,12 +14,14 @@ class CartStore {
 
   onAdd(id) {
     this.waitFor(ProductStore);
-    const products = ProductStore.getState();
+    const products = ProductStore.getState().products;
 
     try {
-      const index = this.getProductIndex(id);
+      var index = this.getProductIndex(id);
     } catch(e) {
-      const entry = products.get(id).set('quantity', 1);
+      // New entry
+      var productIndex = ProductStore.getProductIndex(id);
+      var entry = products.get(productIndex).set('quantity', 1);
       this.cart = this.cart.push(entry);
       return;
     }
@@ -28,9 +30,7 @@ class CartStore {
       return false;
     }
 
-    var product = this.cart.get(index)
-      .update('quantity', v => v + 1);
-
+    var entry = this.cart.get(index).update('quantity', v => v + 1);
     this.cart.push(entry);
   }
 
@@ -60,15 +60,15 @@ class CartStore {
    */
   getProductIndex(id) {
     const index = this.cart
-      .findIndex(product => product.id === id);
+      .findIndex(product => product.get('id') === id);
 
     // Throw an error if the product does not exist
     // >> `findIndex` returns -1 when an index was not found
-    if ( ~index ) {
+    if ( index == -1 ) {
       throw new Error(`Product with the id ${id} does not exist`);
     }
 
-    return this.cart.get(index);
+    return index;
   }
 }
 

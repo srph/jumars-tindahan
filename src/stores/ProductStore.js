@@ -12,7 +12,7 @@ class ProductStore {
     this.bindActions(CartActions);
 
     // We'll expose this store's getter for CartStore's use
-    this.exportPublicMethods({ getProductIndex: this.getProductIndex });
+    this.exportPublicMethods({ getProductIndex: this.getProductIndex.bind(this) });
   }
 
   onCartAdd(id) {
@@ -47,15 +47,15 @@ class ProductStore {
    */
   getProductIndex(id) {
     const index = this.products
-      .findIndex(product => product.id === id);
+      .findIndex(product => product.get('id') === id);
 
     // Throw an error if the product does not exist
     // >> `findIndex` returns -1 when an index was not found
-    if ( ~index ) {
+    if ( index == -1 ) {
       throw new Error(`Product with the id ${id} does not exist`);
     }
 
-    return this.products.get(index);
+    return index;
   }
 }
 
