@@ -6,12 +6,11 @@ import CartItem from './CartItem';
 export default React.createClass({
   render() {
     var { data } = this.props;
+
     return (
-      <div>
-        {!!data.size ? data.map((product) => {
-          return <CartItem data={product} />
-        }) : <CartListEmpty />}
-      </div>
-    )
+      !!data.size ? <div> {data.map((product) => {
+        return <CartItem data={product} />
+      })} </div>: <CartListEmpty />
+    );
   }
 })

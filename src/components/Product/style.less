@@ -1,7 +1,13 @@
-.product {
-  background: @brand-info;
-  padding: 20px;
+@import (reference) '../../../less/main';
 
-  > .header { .text-center; }
+.product {
   > .list {}
+  > .list > .item {
+    .panel;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  > .list > .item:first-child { margin-top: 0; }
+  > .list > .item:last-child { margin-bottom: 0; }
+  > .list > .item > .body { .panel-body; }
 }

@@ -10,7 +10,7 @@ export default React.createClass({
         <div className="row">
           <div className="col-md-8">
             <CategoryLinks />
-            <RouteHandler {...this.props} />
+            <RouteHandler />
           </div>
 
           <div className="col-md-4">

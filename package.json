@@ -4,7 +4,8 @@
   "description": "A sample cart app written in Alt.",
   "main": "src/index.js",
   "scripts": {
-    "script": "browserify -d -t babelify --extension=.jsx . > assets/bundle.js",
+    "script": "browserify . -v -d -t babelify --extension=.jsx > assets/bundle.js",
+    "watch": "watchify src/index.js -v -d -t babelify --extension=.jsx -o assets/bundle.js",
     "style": "lessc --glob less/main.less assets/style.css",
     "build": "npm run script || npm run style",
     "start": "npm run build && open index.html"
@@ -30,6 +31,7 @@
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
     "less": "^2.5.0",
-    "less-plugin-glob": "^1.1.0"
+    "less-plugin-glob": "^1.1.0",
+    "watchify": "^3.1.0"
   }
 }

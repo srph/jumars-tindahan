@@ -6,13 +6,18 @@ import ProductHeader from './ProductHeader'
 import ProductList from './ProductList';
 
 export default React.createClass({
-  render() {
-    var { params } = this.props;
+  // Reference to react-router
+  // this.context.router
+  contextTypes: {
+    router: React.PropTypes.func
+  },
 
+  render() {
+    var { router } = this.context;
+    var path = router.getCurrentPath();
     return (
       <div className="product">
-        <ProductHeader filter={params.category} />
-
+        <ProductHeader filter={path.slice(1, path.length)} />
         <AltContainer
           store={ProductStore}
           render={(props) => {
