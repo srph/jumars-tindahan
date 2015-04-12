@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteHandler } from 'react-router';
-import Categories from './components/Categories';
-import Cart from './components/Cart';
+import CategoryLinks from './CategoryLinks/CategoryLinks';
+import Cart from './Cart/Cart';
 
 export default React.createClass({
   render() {

@@ -2,9 +2,12 @@
   "name": "jumars-tindahan",
   "version": "1.0.0",
   "description": "A sample cart app written in Alt.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "script": "browserify -d -t babelify --extension=.jsx . > assets/bundle.js",
+    "style": "lessc --glob less/main.less assets/style.css",
+    "build": "npm run script || npm run style",
+    "start": "npm run build && open index.html"
   },
   "repository": {
     "type": "git",
@@ -18,8 +21,10 @@
   "homepage": "https://github.com/srph/jumars-tindahan",
   "dependencies": {
     "alt": "^0.15.4",
+    "classnames": "^1.2.0",
     "immutable": "^3.7.1",
-    "react": "^0.13.1"
+    "react": "^0.13.1",
+    "react-router": "^0.13.2"
   },
   "devDependencies": {
     "babelify": "^6.0.2",

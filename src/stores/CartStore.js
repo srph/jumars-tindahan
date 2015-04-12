@@ -1,62 +1,66 @@
 import alt from '../alt';
 import CartActions from '../actions/CartActions';
+import ProductStore from './ProductStore';
 
 class CartStore {
   constructor() {
-    this.products = [];
+    // Initial state of `cart` so we can reuse it,
+    // when the CartActions dispatches `clear`
+    this._cart = new Immutable.List();
+    this.cart = this._cart;
     this.bindActions(CartActions);
   }
 
   onAdd(id) {
-    var exists = this._getProduct();
-
-    if ( ~exists ) {
-      return false;
-    }
-  }
-
-  onDecrease(id) {
     try {
-      var product = this._getProduct(id);
+      const index = this.getProductIndex(id);
+      const product = this.cart.get(id);
     } catch(e) {
-      return false;
+      const product = ProductStore.getState().get(id);
+      const entry = product
+        .delete('stock')
+        .set('quantity', 1);
+      this.cart = this.cart.push(product);
     }
 
-    products[index].quantity--;
-  }
-
-  onIncrease(id) {
-    try {
-      var product = this._getProduct(id);
-    } catch(e) {
-      return false;
-    }
-
-    this.products[index].quantity--;
+    const product = product.set('quantity', product.get('quantity') + 1);
   }
 
   onRemove(id) {
-    this.products = this.products
-      .filter(product => product.id !== id);
+    try {
+      const index = this.getProductIndex(id);
+    } catch(e) {
+      return false;
+    }
+
+    this.cart = this.cart.remove(index, 1);
   }
 
   onClear() {
-    this.products = [];
+    // Simply reassign our `carts` state
+    // to `_carts` since we created a snapshot
+    // of its init state on the class constructor
+    this.cart = this._cart;
   }
 
   /**
-   * Utility to get the product with the provided id
+   * Get the product with the given id
+   *
+   * @param {int} id ID the of the given product
+   * @throws Error
+   * @return {Object}
    */
-  _getProduct() {
-    var products = this.products
-      .map(product => product.id)
-        .indexOf(id);
+  getProductIndex(id) {
+    const index = this.cart
+      .findIndex(product => product.id === id);
 
-    if ( products == undefined ) {
-      throw new Error('Product does not exist in the list');
+    // Throw an error if the product does not exist
+    // >> `findIndex` returns -1 when an index was not found
+    if ( ~index ) {
+      throw new Error(`Product with the id ${id} does not exist`);
     }
 
-    return products;
+    return this.cart.get(index);
   }
 }
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import CartActions from './CartActions';
+import CartList from './CartList';
 
 export default React.createClass({
   render() {

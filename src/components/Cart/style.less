@@ -1,3 +1,5 @@
+@import (reference) '../../../less/main';
+
 .cart {
   position: fixed;
 
@@ -8,7 +10,7 @@
    */
 
   .box {
-    background: @color-info;
+    background: @brand-info;
     padding: 20;
   }
 
@@ -23,20 +25,20 @@
   }
 
   .box > .list > .name {
-    .col-md-5;
+    .make-md-column(5);
     // ellipsis sshit
   }
 
   .box > .list > .price {
-    .col-md-2;
+    .make-md-column(2);
   }
 
   .box > .list > .qt {
-    .col-md-2;
+    .make-md-column(2);
   }
 
   .box > .list > .options {
-    .col-md-3;
+    .make-md-column(3);
   }
 
   .box > .list > .options > .decrease-btn {
@@ -71,7 +73,7 @@
    * Floating Button Actions
    * \-----------------/
    */
-   
+
   .actions {
     .clearfix();
     position: absolute;
