@@ -1,7 +1,7 @@
 import Immutable from 'immutable';
 import alt from '../alt';
 import data from '../data';
-import CardActions from '../actions/CardActions';
+import CartActions from '../actions/CartActions';
 import CartStore from './CartStore';
 
 class ProductStore {
@@ -23,11 +23,13 @@ class ProductStore {
       return false;
     }
 
-    const product = this.products.get(index);
-    const product = products.set('quantity', products.get('quantity') + 1);
+    const stock = this.products.get(index).get('stock');
+    if ( stock == 0 ) {
+      return false;
+    }
 
-    this.products = this.products
-      .update(index, () => { return product; });
+    var product = products.update('stock', v => v - 1);
+    this.products = this.products.update(index, () => { return product; });
   }
 
   onClear() {

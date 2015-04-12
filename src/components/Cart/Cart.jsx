@@ -1,15 +1,25 @@
 import React from 'react';
-import CartActions from './CartActions';
+import AltContainer from 'alt/components/AltContainer';
+import CartButtons from './CartButtons';
+import CartStore from '../../stores/CartStore';
 import CartList from './CartList';
 
 export default React.createClass({
   render() {
     return (
-      <div className="cart">
-        <div className="box">
-          <CartList />
-        </div>
-      </div>
+      <AltContainer
+        store={CartStore}
+        render={(props) => {
+          return (
+            <div className="cart">
+              <div className="box">
+                <CartList data={props.cart} />
+              </div>
+
+              <CartButtons />
+            </div>
+          );
+        }} />
     );
   }
 })

@@ -1,3 +1,4 @@
+import Immutable from 'immutable';
 import alt from '../alt';
 import CartActions from '../actions/CartActions';
 import ProductStore from './ProductStore';
@@ -12,18 +13,25 @@ class CartStore {
   }
 
   onAdd(id) {
+    this.waitFor(ProductStore);
+    const products = ProductStore.getState();
+
     try {
       const index = this.getProductIndex(id);
-      const product = this.cart.get(id);
     } catch(e) {
-      const product = ProductStore.getState().get(id);
-      const entry = product
-        .delete('stock')
-        .set('quantity', 1);
-      this.cart = this.cart.push(product);
+      const entry = products.get(id).set('quantity', 1);
+      this.cart = this.cart.push(entry);
+      return;
     }
 
-    const product = product.set('quantity', product.get('quantity') + 1);
+    if ( products.get(id).get('stock') == 0 ) {
+      return false;
+    }
+
+    var product = this.cart.get(index)
+      .update('quantity', v => v + 1);
+
+    this.cart.push(entry);
   }
 
   onRemove(id) {
