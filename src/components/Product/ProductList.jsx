@@ -3,13 +3,18 @@ import ProductItem from './ProductItem';
 
 export default React.createClass({
   render() {
-    var { data } = this.props;
+    var { filter, data } = this.props;
 
     return (
       <div className="list">
-        { data.map((product, i) => {
-          return <ProductItem data={product} key={i} />
-        })}
+        { data
+          .filter((product) => {
+            return filter !== 'all' ? product.get('category') == filter : true
+          })
+          .map((product, i) => {
+            return <ProductItem data={product} key={i} />
+          })
+        }
       </div>
     );
   }

@@ -15,13 +15,15 @@ export default React.createClass({
   render() {
     var { router } = this.context;
     var path = router.getCurrentPath();
+    var filter = path == '/' ? 'all' : path.slice(1, path.length);
+
     return (
       <div className="product">
-        <ProductHeader filter={path.slice(1, path.length)} />
+        <ProductHeader filter={filter} />
         <AltContainer
           store={ProductStore}
           render={(props) => {
-            return <ProductList data={props.products} />
+            return <ProductList data={props.products} filter={filter} />
           }} />
       </div>
     );

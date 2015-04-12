@@ -4,13 +4,10 @@ import uppercase from 'upper-case-first';
 export default React.createClass({
   render() {
     var { filter } = this.props;
-    var uppercased = !filter.length
-      ? 'All'
-      : uppercase(filter);
 
     return (
       <h1>
-        Products ({uppercased})
+        Products ({`${uppercase(filter)}`})
       </h1>
     );
   }
