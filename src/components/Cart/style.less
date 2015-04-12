@@ -1,9 +1,6 @@
 @import (reference) '../../../less/main';
 
 .cart {
-  position: fixed;
-  width: 100%;
-
   /**
    * /-----------------\
    * Background (outer)
@@ -14,6 +11,17 @@
     background: @brand-info;
     min-height: 100px;
     padding: 20px;
+  }
+
+  .box > .list-empty {
+    display: table;
+    height: 100%;
+  }
+
+  .box > .list-empty > .inner {
+    display: table-cell;
+    vertical-align: center;
+    .text-center;
   }
 
   /**

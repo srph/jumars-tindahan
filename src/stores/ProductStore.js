@@ -2,7 +2,6 @@ import Immutable from 'immutable';
 import alt from '../alt';
 import data from '../data';
 import CartActions from '../actions/CartActions';
-import CartStore from './CartStore';
 
 class ProductStore {
   constructor() {

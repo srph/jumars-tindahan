@@ -1,14 +1,16 @@
 import React from 'react';
 import CartStore from '../../stores/CartStore';
+import CartListEmpty from './CartListEmpty';
 import CartItem from './CartItem';
 
 export default React.createClass({
   render() {
+    var { data } = this.props;
     return (
       <div>
-        {this.props.data.map((product) => {
+        {!!data.size ? data.map((product) => {
           return <CartItem data={product} />
-        })}
+        }) : <CartListEmpty />}
       </div>
     )
   }
