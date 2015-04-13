@@ -12,6 +12,10 @@ class CartActions {
   clear() {
     this.dispatch();
   }
+
+  checkout() {
+    this.actions.clear();
+  }
 }
 
 export default alt.createActions(CartActions);

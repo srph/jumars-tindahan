@@ -7,7 +7,7 @@ export default React.createClass({
     return (
       <div className="item">
         <div className="body">
-          {data.get('name')}
+          {data.get('name')} ({data.get('stock')})
           <button onClick={CartActions.add.bind(null, data.get('id'))}>
             Buy!
           </button>

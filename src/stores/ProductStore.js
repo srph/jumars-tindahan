@@ -2,6 +2,7 @@ import Immutable from 'immutable';
 import alt from '../alt';
 import data from '../data';
 import CartActions from '../actions/CartActions';
+import CartStore from './CartStore';
 
 class ProductStore {
   constructor() {
@@ -15,20 +16,26 @@ class ProductStore {
     this.exportPublicMethods({ getProductIndex: this.getProductIndex.bind(this) });
   }
 
-  onCartAdd(id) {
+  onAdd(id) {
+    // Let the cart get a stock first ;)
+    this.waitFor(CartStore);
+
     try {
-      const index = this.getProductIndex(id);
+      var index = this.getProductIndex(id);
     } catch(e) {
       return false;
     }
+    var product = this.products.get(index);
 
-    const stock = this.products.get(index).get('stock');
-    if ( stock == 0 ) {
+    // OFC, We won't update anything when
+    // the stock is already replenished!
+    if ( product.get('stock') == 0 ) {
       return false;
     }
 
-    var product = products.update('stock', v => v - 1);
-    this.products = this.products.update(index, () => { return product; });
+    this.products = this.products.update(index, (product) => {
+      return product.update('stock', v => v - 1);
+    });
   }
 
   onClear() {

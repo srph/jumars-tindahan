@@ -2,9 +2,10 @@ import React from 'react';
 
 export default React.createClass({
   render() {
+    var { data } = this.props;
     return (
       <div>
-        {this.props.data}
+        {data.get('name')} ({data.get('quantity')})
       </div>
     )
   }

@@ -13,25 +13,27 @@ class CartStore {
   }
 
   onAdd(id) {
-    this.waitFor(ProductStore);
     const products = ProductStore.getState().products;
 
     try {
       var index = this.getProductIndex(id);
     } catch(e) {
       // New entry
-      var productIndex = ProductStore.getProductIndex(id);
-      var entry = products.get(productIndex).set('quantity', 1);
+      const productIndex = ProductStore.getProductIndex(id);
+      const entry = products.get(productIndex).set('quantity', 1);
       this.cart = this.cart.push(entry);
       return;
     }
 
-    if ( products.get(id).get('stock') == 0 ) {
+    const productIndex = ProductStore.getProductIndex(id);
+    const stock = products.get(productIndex).get('stock');
+    if ( stock === 0 ) {
       return false;
     }
 
-    var entry = this.cart.get(index).update('quantity', v => v + 1);
-    this.cart.push(entry);
+    this.cart = this.cart.update(index, (product) => {
+      return product.update('quantity', v => v + 1);
+    });
   }
 
   onRemove(id) {
