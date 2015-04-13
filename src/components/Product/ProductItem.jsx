@@ -1,16 +1,16 @@
 import React from 'react';
-import CartActions from '../../actions/CartActions';
+import ProductItemBuyButton from './ProductItemBuyButton';
 
 export default React.createClass({
   render() {
     var { data } = this.props;
+    var id = data.get('id');
+    var stock = data.get('stock');
     return (
       <div className="item">
         <div className="body">
-          {data.get('name')} ({data.get('stock')})
-          <button onClick={CartActions.add.bind(null, data.get('id'))}>
-            Buy!
-          </button>
+          {data.get('name')} ({stock})
+          <ProductItemBuyButton stock={!!stock} id={id} />
         </div>
       </div>
     );
