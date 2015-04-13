@@ -16,7 +16,7 @@ export default React.createClass({
                 <CartList data={props.cart} />
               </div>
 
-              <CartButtons />
+              <CartButtons data={props.cart} />
             </div>
           );
         }} />

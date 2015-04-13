@@ -1,6 +1,7 @@
 @import (reference) '../../../less/main';
 
 .cart {
+  position: relative;
   /**
    * /-----------------\
    * Background (outer)
@@ -8,7 +9,8 @@
    */
 
   .box {
-    background: @brand-info;
+    background: #fff;
+    border: 1px solid #ddd;
     min-height: 100px;
     padding: 20px;
   }
@@ -88,18 +90,25 @@
    */
 
   .actions {
+    position: absolute;
+    width: 100%;
     .clearfix;
   }
 
-  .actions > .clear-btn {
-    .pull-left;
+  .actions > .btn {
     .btn;
-    .btn-danger;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
-  .actions > .checkout-btn {
+  .actions > .btn.-clear {
+    .pull-left;
+    .btn-default;
+  }
+
+  .actions > .btn.-checkout {
     .pull-right;
-    .btn;
-    .btn-success;
+    .btn-default;
   }
 }
