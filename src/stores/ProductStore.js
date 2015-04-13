@@ -4,12 +4,17 @@ import data from '../data';
 import CartActions from '../actions/CartActions';
 import CartStore from './CartStore';
 
+// Initial state of product so we can reuse it,
+// when the CartActions dispatches `clear`
+const initial = Immutable.fromJS(data);
+// A snapshot of the product each time it is checked out.
+// The snapshot allows us to restore to the data after
+// a checkout when the cart is cleared.
+var snapshot;
+
 class ProductStore {
   constructor() {
-    // Initial state of product so we can reuse it,
-    // when the CartActions dispatches `clear`
-    this._products = Immutable.fromJS(data);
-    this.products = this._products;
+    this.products = initial;
     this.bindActions(CartActions);
 
     // We'll expose this store's getter for CartStore's use
@@ -42,7 +47,19 @@ class ProductStore {
     // Simply reassign our `products` state
     // to `_products` since we created a snapshot
     // of its init state on the class constructor
-    this.products = this._products;
+    this.products = snapshot !== undefined
+      ? snapshot
+      : initial;
+  }
+
+  onCheckout() {
+    // Save the snapshot of the current product
+    // for later usage (to be used to restore)
+    // when cleared
+    snapshot = this.products;
+
+    // We're not updating anything.
+    return false;
   }
 
   /**

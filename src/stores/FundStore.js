@@ -3,7 +3,7 @@ import ProductStore from './ProductStore';
 import CartActions from '../actions/CartActions';
 
 // Initial funds
-var initial = 1571.69;
+const initial = 1571.69;
 // Remaining funds on last checkout
 var remaining;
 
@@ -42,9 +42,9 @@ class FundStore {
     // to the remaining funds (which is set when
     // the cart is checked out). Otherwise, to the
     // initial.
-    this.funds = remaining !== null
-      : remaining
-      ? inital;
+    this.funds = remaining !== undefined
+      ? remaining
+      : initial;
   }
 
   onCheckout() {
