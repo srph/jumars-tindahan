@@ -2,9 +2,12 @@ import alt from '../alt';
 import ProductStore from './ProductStore';
 import CartActions from '../actions/CartActions';
 
-// Initial funds
+// Initial funds, used for initial assignment.
+// Used to resture funds on clear if `remaining`
+// is still undefined
 const initial = 1571.69;
-// Remaining funds on last checkout
+// Remaining funds on last checkout. Saved on checkout,
+// and also restored on clear (if it's, at least, defined or assigned).
 var remaining;
 
 class FundStore {
@@ -14,6 +17,7 @@ class FundStore {
   }
 
   onAdd(id) {
+    this.waitFor(ProductStore);
     // If the price does not outweigh the cost, we'll proceed,
     // and deduct the newly aded item to the number of funds.
     // Otherwise, don't trigger any bullshit.
@@ -25,8 +29,9 @@ class FundStore {
     }
 
     var diff = this.funds - product.get('price');
+    var stock = product.get('stock');
 
-    if ( diff < 0 ) {
+    if ( diff < 0 || produ ) {
       return false;
     }
 
