@@ -53,6 +53,13 @@ class CartStore {
     this.cart = this._cart;
   }
 
+  onCheckout() {
+    // The same as `checkout` (above), but in this case
+    // only the CartStore would listen to the `checkout`
+    // action
+    this.cart = this._cart;
+  }
+
   /**
    * Get the product with the given id
    *

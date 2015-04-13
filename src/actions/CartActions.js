@@ -14,7 +14,7 @@ class CartActions {
   }
 
   checkout() {
-    this.actions.clear();
+    this.dispatch();
   }
 }
 
