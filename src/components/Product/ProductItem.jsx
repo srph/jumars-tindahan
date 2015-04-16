@@ -6,10 +6,12 @@ export default React.createClass({
     var { data } = this.props;
     var id = data.get('id');
     var stock = data.get('stock');
+    var img = data.get('img');
     return (
       <div className="item">
         <div className="body">
-          {data.get('name')} ({stock})
+          <div className="thumbnail"> <img src={`assets/img/${img}`} /> </div>
+          <span>{data.get('name')} ({stock})</span>
           <ProductItemBuyButton stock={!!stock} id={id} />
         </div>
       </div>

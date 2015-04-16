@@ -6,9 +6,11 @@ export default React.createClass({
     var { stock, id } = this.props;
 
     return (
-      <button onClick={CartActions.add.bind(null, id)} disabled={!stock}>
-        { stock ? 'Buy!' : 'Sold out' }
-      </button>
+      <div className="buy-btn-container">
+        <button className="buy-btn" onClick={CartActions.add.bind(null, id)} disabled={!stock}>
+          { stock ? 'Buy!' : 'Sold out' }
+        </button>
+      </div>
     );
   }
 });

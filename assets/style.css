@@ -6285,9 +6285,7 @@ button.close {
 .modal-footer:before,
 .modal-footer:after,
 .cart .box > .list:before,
-.cart .box > .list:after,
-.product > .list > .item > .body:before,
-.product > .list > .item > .body:after {
+.cart .box > .list:after {
   content: " ";
   display: table;
 }
@@ -6306,8 +6304,7 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.cart .box > .list:after,
-.product > .list > .item > .body:after {
+.cart .box > .list:after {
   clear: both;
 }
 .center-block {
@@ -7388,51 +7385,102 @@ fieldset[disabled] .category-links > .link.-drinks.active {
 .product > .list > .item:last-child {
   margin-bottom: 0;
 }
-.product > .list > .item > .body {
-  padding: 15px;
+.product > .list > .item > .body > .buy-btn-container {
+  margin-top: 10px;
 }
-.product > .list > .istm > .body > .buy-btn {
+.product > .list > .item > .body > .buy-btn-container > .buy-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
 }
-.product > .list > .istm > .body > .buy-btn:hover,
-.product > .list > .istm > .body > .buy-btn:focus,
-.product > .list > .istm > .body > .buy-btn.focus,
-.product > .list > .istm > .body > .buy-btn:active,
-.product > .list > .istm > .body > .buy-btn.active,
-.open > .dropdown-toggle.product > .list > .istm > .body > .buy-btn {
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.focus {
+  color: #333333;
+  text-decoration: none;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled],
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active,
+.open > .dropdown-toggle.product > .list > .item > .body > .buy-btn-container > .buy-btn {
   color: #333333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
-.product > .list > .istm > .body > .buy-btn:active,
-.product > .list > .istm > .body > .buy-btn.active,
-.open > .dropdown-toggle.product > .list > .istm > .body > .buy-btn {
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active,
+.open > .dropdown-toggle.product > .list > .item > .body > .buy-btn-container > .buy-btn {
   background-image: none;
 }
-.product > .list > .istm > .body > .buy-btn.disabled,
-.product > .list > .istm > .body > .buy-btn[disabled],
-fieldset[disabled] .product > .list > .istm > .body > .buy-btn,
-.product > .list > .istm > .body > .buy-btn.disabled:hover,
-.product > .list > .istm > .body > .buy-btn[disabled]:hover,
-fieldset[disabled] .product > .list > .istm > .body > .buy-btn:hover,
-.product > .list > .istm > .body > .buy-btn.disabled:focus,
-.product > .list > .istm > .body > .buy-btn[disabled]:focus,
-fieldset[disabled] .product > .list > .istm > .body > .buy-btn:focus,
-.product > .list > .istm > .body > .buy-btn.disabled.focus,
-.product > .list > .istm > .body > .buy-btn[disabled].focus,
-fieldset[disabled] .product > .list > .istm > .body > .buy-btn.focus,
-.product > .list > .istm > .body > .buy-btn.disabled:active,
-.product > .list > .istm > .body > .buy-btn[disabled]:active,
-fieldset[disabled] .product > .list > .istm > .body > .buy-btn:active,
-.product > .list > .istm > .body > .buy-btn.disabled.active,
-.product > .list > .istm > .body > .buy-btn[disabled].active,
-fieldset[disabled] .product > .list > .istm > .body > .buy-btn.active {
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled],
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled]:hover,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled]:focus,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled].focus,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled]:active,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled.active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled].active,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn.active {
   background-color: #ffffff;
   border-color: #cccccc;
 }
-.product > .list > .istm > .body > .buy-btn .badge {
+.product > .list > .item > .body > .buy-btn-container > .buy-btn .badge {
   color: #ffffff;
   background-color: #333333;
 }
