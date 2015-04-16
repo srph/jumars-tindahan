@@ -23,7 +23,7 @@ class FundStore {
     // Otherwise, don't trigger any bullshit.
     try {
       const index = ProductStore.getProductIndex(id);
-      var product = ProductStore.getState().products.get(id);
+      var product = ProductStore.getState().products.get(index);
     } catch(e) {
       return false;
     }
@@ -31,7 +31,7 @@ class FundStore {
     var diff = this.funds - product.get('price');
     var stock = product.get('stock');
 
-    if ( diff < 0 || produ ) {
+    if ( diff < 0 || stock == 0 ) {
       return false;
     }
 

@@ -1,5 +1,5 @@
 [
-  { "id": 1, "category": "chichirya", "name": "Iced Gems", "price": 6.00, "img": "1.jpg", "stock": 5 }
+  { "id": 1, "category": "chichirya", "name": "Iced Gems", "price": 6.00, "img": "1.jpg", "stock": 5 },
   { "id": 2, "category": "drinks", "name": "Coke Sakto", "price": 6.00, "img": "2.jpg", "stock": 20 },
   { "id": 3, "category": "drinks", "name": "Coke Litro", "price": 22.00, "img": "3.jpg", "stock": 15 },
   { "id": 4, "category": "drinks", "name": "Coke Mismo", "price": 10.00, "img": "4.jpg", "stock": 15 },
@@ -9,6 +9,7 @@
   { "id": 8, "category": "chichirya", "name": "Piattos (Small)", "price": 12.00, "img": "8.jpg", "stock": 25 },
   { "id": 9, "category": "chichirya", "name": "Piattos (Large)", "price": 22.00, "img": "9.jpg", "stock": 69 },
   { "id": 10, "category": "chichirya", "name": "Puto Seco", "price": 10.00, "img": "10.jpg", "stock": 5 },
-  { "id": 11, "category": "chichirya", "name": "Stick-O", "price": 1.00, "img": "1.jpg", "stock": 5 },
-  { "id": 12, "category": "chichirya", "name": "Hany Bar (Small)", "price": 2.00, "img": "hany-bar-s.jpg", "stock": 100 }
+  { "id": 11, "category": "chichirya", "name": "Stick-O", "price": 1.00, "img": "11.jpg", "stock": 5 },
+  { "id": 12, "category": "chichirya", "name": "Hany Bar", "price": 1.50, "img": "11.jpg", "stock": 100 },
+  { "id": 13, "category": "chichirya", "name": "Hany Bar (SP)", "price": 2.00, "img": "11.jpg", "stock": 100 }
 ]

@@ -7,6 +7,7 @@ import CartStore from './CartStore';
 // Initial state of product so we can reuse it,
 // when the CartActions dispatches `clear`
 const initial = Immutable.fromJS(data);
+console.log(initial.get(12));
 // A snapshot of the product each time it is checked out.
 // The snapshot allows us to restore to the data after
 // a checkout when the cart is cleared.
