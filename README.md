@@ -1,15 +1,13 @@
 # jumars-tindahan
 > A sample cart app written in Alt.
 
-This was originally named **alt-cart**, but later changed to the current because is sounded too generic. Few things you will find in the source code is shit coding (yes), and weird stuff. The css file (LESS) found in the along with the `Cart` component does is one example. At the time I was compiling the LESS files, I have no further proof (nor do I know much about file systems and what node or LESS does), but it was obvious that the file being compiled was the from cache.
+This project was mainly about testing Flux (Thanks, Alt, this was easier with you), Immutable, and also an approach to placing css along with its respective components (check the components). At the time I was compiling the LESS files, I have no further proof (nor do I know much about file systems and what node or LESS does), but it was obvious that the file being compiled was the from cache. The css file (LESS) found in the along with the `Cart` component does is one example. 
 
-## Tools
-
-Mainly about testing Flux (Thanks, Alt, this was easier with you), Immutable, and also an approach to placing css along with its respective components (check the components).
+**Tools**
 
 - [React](https://facebook.github.io/react)
-- [Alt](https://alt.js.org)
-- [ImmutableJS](https://facebook.github.io/immutable-js)
+- [Alt](https://alt.js.org) - Library based on Flux
+- [Immutable.js](https://facebook.github.io/immutable-js)
 
 ## Local Setup
 
