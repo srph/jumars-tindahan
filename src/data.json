@@ -5,11 +5,11 @@
   { "id": 4, "category": "drinks", "name": "Coke Mismo", "price": 10.00, "img": "4.jpg", "stock": 15 },
   { "id": 5, "category": "chichirya", "name": "Sir Chips", "price": 1.00, "img": "5.jpg", "stock": 69 },
   { "id": 6, "category": "chichirya", "name": "Nova", "price": 20.00, "img": "6.jpg", "stock": 25 },
-  { "id": 7, "category": "chichirya", "name": "Chippy", "price": 1.00, "img": "7.jpg", "stock": 25 },
+  { "id": 7, "category": "chichirya", "name": "Chippy", "price": 1.00, "img": "7.jpeg", "stock": 25 },
   { "id": 8, "category": "chichirya", "name": "Piattos (Small)", "price": 12.00, "img": "8.jpg", "stock": 25 },
   { "id": 9, "category": "chichirya", "name": "Piattos (Large)", "price": 22.00, "img": "9.jpg", "stock": 69 },
   { "id": 10, "category": "chichirya", "name": "Puto Seco", "price": 10.00, "img": "10.jpg", "stock": 5 },
   { "id": 11, "category": "chichirya", "name": "Stick-O", "price": 1.00, "img": "11.jpg", "stock": 5 },
-  { "id": 12, "category": "chichirya", "name": "Hany Bar", "price": 1.50, "img": "11.jpg", "stock": 100 },
-  { "id": 13, "category": "chichirya", "name": "Hany Bar (SP)", "price": 2.00, "img": "11.jpg", "stock": 100 }
+  { "id": 12, "category": "chichirya", "name": "Hany Bar", "price": 1.50, "img": "12.jpg", "stock": 100 },
+  { "id": 13, "category": "chichirya", "name": "Hany Bar (SP)", "price": 2.00, "img": "13.jpeg", "stock": 100 }
 ]
