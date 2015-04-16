@@ -6285,7 +6285,9 @@ button.close {
 .modal-footer:before,
 .modal-footer:after,
 .cart .box > .list:before,
-.cart .box > .list:after {
+.cart .box > .list:after,
+.product > .list > .item > .body:before,
+.product > .list > .item > .body:after {
   content: " ";
   display: table;
 }
@@ -6304,7 +6306,8 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.cart .box > .list:after {
+.cart .box > .list:after,
+.product > .list > .item > .body:after {
   clear: both;
 }
 .center-block {
@@ -7206,4 +7209,304 @@ fieldset[disabled] .category-links > .link.-drinks.active {
 .category-links > .link.-drinks .badge {
   color: #337ab7;
   background-color: #ffffff;
+}
+.product > .list > .item {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.product > .list > .item > .list-group,
+.product > .list > .item > .panel-collapse > .list-group {
+  margin-bottom: 0;
+}
+.product > .list > .item > .list-group .list-group-item,
+.product > .list > .item > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.product > .list > .item > .list-group:first-child .list-group-item:first-child,
+.product > .list > .item > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.product > .list > .item > .list-group:last-child .list-group-item:last-child,
+.product > .list > .item > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.product > .list > .item > .table,
+.product > .list > .item > .table-responsive > .table,
+.product > .list > .item > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+.product > .list > .item > .table caption,
+.product > .list > .item > .table-responsive > .table caption,
+.product > .list > .item > .panel-collapse > .table caption {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.product > .list > .item > .table:first-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.product > .list > .item > .table:first-child > thead:first-child > tr:first-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.product > .list > .item > .table:first-child > tbody:first-child > tr:first-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.product > .list > .item > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.product > .list > .item > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.product > .list > .item > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.product > .list > .item > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+.product > .list > .item > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.product > .list > .item > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.product > .list > .item > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.product > .list > .item > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.product > .list > .item > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+.product > .list > .item > .table:last-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.product > .list > .item > .table:last-child > tbody:last-child > tr:last-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.product > .list > .item > .table:last-child > tfoot:last-child > tr:last-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.product > .list > .item > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.product > .list > .item > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.product > .list > .item > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.product > .list > .item > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+.product > .list > .item > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.product > .list > .item > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.product > .list > .item > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.product > .list > .item > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.product > .list > .item > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+.product > .list > .item > .panel-body + .table,
+.product > .list > .item > .panel-body + .table-responsive,
+.product > .list > .item > .table + .panel-body,
+.product > .list > .item > .table-responsive + .panel-body {
+  border-top: 1px solid #dddddd;
+}
+.product > .list > .item > .table > tbody:first-child > tr:first-child th,
+.product > .list > .item > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+.product > .list > .item > .table-bordered,
+.product > .list > .item > .table-responsive > .table-bordered {
+  border: 0;
+}
+.product > .list > .item > .table-bordered > thead > tr > th:first-child,
+.product > .list > .item > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.product > .list > .item > .table-bordered > tbody > tr > th:first-child,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.product > .list > .item > .table-bordered > tfoot > tr > th:first-child,
+.product > .list > .item > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.product > .list > .item > .table-bordered > thead > tr > td:first-child,
+.product > .list > .item > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.product > .list > .item > .table-bordered > tbody > tr > td:first-child,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.product > .list > .item > .table-bordered > tfoot > tr > td:first-child,
+.product > .list > .item > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.product > .list > .item > .table-bordered > thead > tr > th:last-child,
+.product > .list > .item > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.product > .list > .item > .table-bordered > tbody > tr > th:last-child,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.product > .list > .item > .table-bordered > tfoot > tr > th:last-child,
+.product > .list > .item > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.product > .list > .item > .table-bordered > thead > tr > td:last-child,
+.product > .list > .item > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.product > .list > .item > .table-bordered > tbody > tr > td:last-child,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.product > .list > .item > .table-bordered > tfoot > tr > td:last-child,
+.product > .list > .item > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.product > .list > .item > .table-bordered > thead > tr:first-child > td,
+.product > .list > .item > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.product > .list > .item > .table-bordered > tbody > tr:first-child > td,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.product > .list > .item > .table-bordered > thead > tr:first-child > th,
+.product > .list > .item > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.product > .list > .item > .table-bordered > tbody > tr:first-child > th,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+.product > .list > .item > .table-bordered > tbody > tr:last-child > td,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.product > .list > .item > .table-bordered > tfoot > tr:last-child > td,
+.product > .list > .item > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.product > .list > .item > .table-bordered > tbody > tr:last-child > th,
+.product > .list > .item > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.product > .list > .item > .table-bordered > tfoot > tr:last-child > th,
+.product > .list > .item > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+.product > .list > .item > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+.product > .list > .item:first-child {
+  margin-top: 0;
+}
+.product > .list > .item:last-child {
+  margin-bottom: 0;
+}
+.product > .list > .item > .body {
+  padding: 15px;
+}
+.product > .list > .item > .body:before,
+.product > .list > .item > .body:after {
+  content: " ";
+  display: table;
+}
+.product > .list > .item > .body:after {
+  clear: both;
+}
+.product > .list > .item > .body:before,
+.product > .list > .item > .body:after {
+  content: " ";
+  display: table;
+}
+.product > .list > .item > .body:after {
+  clear: both;
+}
+.product > .list > .item > .body > .thumbnail {
+  float: left;
+  margin-right: 10px;
+}
+.product > .list > .item > .body > .buy-btn-container {
+  margin-top: 10px;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.focus {
+  color: #333333;
+  text-decoration: none;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled],
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active,
+.open > .dropdown-toggle.product > .list > .item > .body > .buy-btn-container > .buy-btn {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.active,
+.open > .dropdown-toggle.product > .list > .item > .body > .buy-btn-container > .buy-btn {
+  background-image: none;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled],
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled]:hover,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn:hover,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled]:focus,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn:focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled].focus,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn.focus,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled]:active,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn:active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn.disabled.active,
+.product > .list > .item > .body > .buy-btn-container > .buy-btn[disabled].active,
+fieldset[disabled] .product > .list > .item > .body > .buy-btn-container > .buy-btn.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.product > .list > .item > .body > .buy-btn-container > .buy-btn .badge {
+  color: #ffffff;
+  background-color: #333333;
 }
