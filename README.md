@@ -1,4 +1,7 @@
-# jumars-tindahan
+![preview](https://cloud.githubusercontent.com/assets/5093058/7192515/d6907e40-e4c8-11e4-9ba3-751befb3da8e.gif)
+
+
+# Jumar's Tindahan
 > A sample cart app written in Alt.
 
 This project was mainly about testing Flux (Thanks, Alt, this was easier with you), Immutable, and also an approach to placing css along with its respective components (check the components). At the time I was compiling the LESS files, I have no further proof (nor do I know much about file systems and what node or LESS does), but it was obvious that the file being compiled was the from cache. The css file (LESS) found in the along with the `Cart` component does is one example. 
@@ -23,7 +26,7 @@ open index.html
 
 ## Acknowledgement
 
-**jumars-tindahan** © 2015+, Kier Borromeo (srph). **jumasrs-tindahan** is released under the [MIT](mit-license.org) license.
+**Jumar's Tindahan** © 2015+, Kier Borromeo (srph). **Jumar's Tindahan** is released under the [MIT](mit-license.org) license.
 
 > [srph.github.io](http://srph.github.io) &nbsp;&middot;&nbsp;
 > GitHub [@srph](https://github.com/srph) &nbsp;&middot;&nbsp;
