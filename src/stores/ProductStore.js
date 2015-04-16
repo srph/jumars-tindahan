@@ -1,6 +1,7 @@
 import Immutable from 'immutable';
 import alt from '../alt';
 import data from '../data';
+import FundStore from './FundStore';
 import CartActions from '../actions/CartActions';
 import CartStore from './CartStore';
 
@@ -23,7 +24,7 @@ class ProductStore {
 
   onAdd(id) {
     // Let the cart get a stock first ;)
-    this.waitFor(CartStore);
+    this.waitFor([CartStore, FundStore]);
 
     try {
       var index = this.getProductIndex(id);

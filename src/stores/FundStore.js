@@ -17,7 +17,6 @@ class FundStore {
   }
 
   onAdd(id) {
-    this.waitFor(ProductStore);
     // If the price does not outweigh the cost, we'll proceed,
     // and deduct the newly aded item to the number of funds.
     // Otherwise, don't trigger any bullshit.
