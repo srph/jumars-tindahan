@@ -10,13 +10,13 @@ export default React.createClass({
     var img = data.get('img');
     var price = data.get('price');
     var remaining = data.get('stock') ? ' remaining' : '';
-    
+
     return (
       <div className="item">
         <div className="body">
           <div className="thumbnail"> <img src={`assets/img/${img}`} /> </div>
           <h3>{name} ({stock}{remaining})</h3>
-          <h5>{price}</h5>
+          <h5>{price} PHP</h5>
           <ProductItemBuyButton stock={!!stock} id={id} />
         </div>
       </div>
