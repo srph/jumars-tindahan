@@ -25,17 +25,21 @@ class ProductStore {
   onAdd(id) {
     // Let the cart get a stock first ;)
     this.waitFor([CartStore, FundStore]);
+    var funds = FundStore.getState().funds;
 
     try {
       var index = this.getProductIndex(id);
     } catch(e) {
       return false;
     }
+
     var product = this.products.get(index);
+    var stock = product.get('stock');
+    var diff = funds - product.get('price');
 
     // OFC, We won't update anything when
     // the stock is already replenished!
-    if ( product.get('stock') == 0 ) {
+    if ( stock == 0 || diff < 0 ) {
       return false;
     }
 
