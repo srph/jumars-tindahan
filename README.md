@@ -1,5 +1,6 @@
 ![preview](https://cloud.githubusercontent.com/assets/5093058/7192515/d6907e40-e4c8-11e4-9ba3-751befb3da8e.gif)
 
+<sup>\* Preview is a bit oudated.</sup>
 
 # Jumar's Tindahan
 > A sample cart app written in Alt.
