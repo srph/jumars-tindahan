@@ -9,7 +9,7 @@ export default React.createClass({
 
     return (
       <h5>
-        {name}<small>({qty} {qtyPrefix})</small>
+        {name} <small>({qty} {qtyPrefix})</small>
       </h5>
     )
   }
