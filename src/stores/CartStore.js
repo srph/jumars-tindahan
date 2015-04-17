@@ -1,6 +1,7 @@
 import Immutable from 'immutable';
 import alt from '../alt';
 import CartActions from '../actions/CartActions';
+import FundStore from './FundStore';
 import ProductStore from './ProductStore';
 
 class CartStore {
@@ -13,21 +14,34 @@ class CartStore {
   }
 
   onAdd(id) {
+    this.waitFor(FundStore);
+    const funds = FundStore.getState().funds;
     const products = ProductStore.getState().products;
 
     try {
       var index = this.getProductIndex(id);
     } catch(e) {
       // New entry
-      const productIndex = ProductStore.getProductIndex(id);
-      const entry = products.get(productIndex).set('quantity', 1);
+      var productIndex = ProductStore.getProductIndex(id);
+      var product = products.get(productIndex);
+      var entry = product.set('quantity', 1);
+      var stock = product.get('stock');
+      var diff = funds - product.get('price');
+
+      if ( stock == 0 || diff < 0 ) {
+        return false;
+      }
+
       this.cart = this.cart.push(entry);
       return;
     }
 
-    const productIndex = ProductStore.getProductIndex(id);
-    const stock = products.get(productIndex).get('stock');
-    if ( stock === 0 ) {
+    var productIndex = ProductStore.getProductIndex(id);
+    var product = products.get(productIndex);
+    var stock = product.get('stock');
+    var diff = funds - product.get('price');
+
+    if ( stock === 0 || diff < 0 ) {
       return false;
     }
 
