@@ -6,7 +6,7 @@ export default React.createClass({
       <div className="list-empty">
         <div className="inner">
           <h1>
-            The list is empty!
+            The cart is empty!
           </h1>
         </div>
       </div>
