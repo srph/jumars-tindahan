@@ -20,7 +20,7 @@ export default React.createClass({
           return (
             <div className="cart">
               <div className="box">
-                Funds: {funds}
+                Funds: {funds.toFixed(2)}
                 <CartList data={cart} />
               </div>
 
