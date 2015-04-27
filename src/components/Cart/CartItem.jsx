@@ -5,11 +5,11 @@ export default React.createClass({
     var { data } = this.props;
     var name = data.get('name');
     var qty = data.get('quantity');
-    var qtyPrefix = qty > 1 ? 'pcs' : 'pc';
 
     return (
       <h5>
-        {name} <small>({qty} {qtyPrefix})</small>
+        {name} <small>({qty} {qty > 1 ? 'pcs' : 'pc'})</small>
+        <CartItemOptions id={data.get('id')} />
       </h5>
     )
   }

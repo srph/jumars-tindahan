@@ -73,13 +73,13 @@ class CartStore {
     // action
     this.cart = this._cart;
   }
-  
-  onRemove(id) {
+
+  onDecrease(id) {
     const i = this.getProductIndex(id);
-    
+
     // Either remove the product or reduce the quantity.
     this.cart = this.cart.get(i).get('quantity') > 1
-      ? this.cart.update(i, product => product.update('quantity', v => v + 1));
+      ? this.cart.update(i, product => product.update('quantity', v => v + 1))
       : this.cart.delete(i);
   }
 

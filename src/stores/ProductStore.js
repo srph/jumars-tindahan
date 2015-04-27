@@ -48,7 +48,7 @@ class ProductStore {
     });
   }
 
-  onClear() {
+  onDecrease() {
     // Simply reassign our `products` state
     // to `_products` since we created a snapshot
     // of its init state on the class constructor
@@ -66,7 +66,7 @@ class ProductStore {
     // We're not updating anything.
     return false;
   }
-  
+
   onRemove(id) {
     this.products = this.products
       .update(this.getProductIndex(id), (product) => {
