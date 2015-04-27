@@ -37,8 +37,12 @@ class FundStore {
     this.funds = diff;
   }
 
-  onRemove() {
-    // Do something the opposite of add
+  onRemove(id) {
+    // Increase the funds
+    const index = ProductStore.getProductIndex(id);
+    var product = ProductStore.getState().products.get(index);
+    
+    this.funds = this.funds + product.get('price');
   }
 
   onClear() {
