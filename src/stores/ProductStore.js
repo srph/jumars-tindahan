@@ -66,6 +66,13 @@ class ProductStore {
     // We're not updating anything.
     return false;
   }
+  
+  onRemove(id) {
+    this.products = this.products
+      .update(this.getProductIndex(id), (product) => {
+        return product.set('quantity', product.get('quantity') + 1);
+      });
+  }
 
   /**
    * Get the product with the given id
