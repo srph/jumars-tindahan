@@ -70,7 +70,7 @@ class ProductStore {
   onRemove(id) {
     this.products = this.products
       .update(this.getProductIndex(id), (product) => {
-        return product.set('quantity', product.get('quantity') + 1);
+        return product.set('stock', product.get('stock') + 1);
       });
   }
 
