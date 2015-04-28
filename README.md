@@ -13,6 +13,7 @@ This project was mainly about trying out Flux (Thanks, Alt, this was easier with
 - Immutable data structures makes data shit with the user interface easier to maintain and predict.
 - LESS, as of this time of writing, does not support globbing in which I used [*less-plugin-glob*](https://github.com/just-boris/less-plugin-glob) by [**just-boris**](https://github.com/just-boris). I also had to `@import` the main files which is really tedious and non-dry, especially in actual projects.
 - LESS's feat that [everything is a mixin](http://lesscss.org/features/#features-overview-feature-mixins) is pretty neat.
+- Flux is so awesome.
 
 **Tools**
 
