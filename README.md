@@ -1,17 +1,24 @@
 ![preview](https://cloud.githubusercontent.com/assets/5093058/7192515/d6907e40-e4c8-11e4-9ba3-751befb3da8e.gif)
 
-<sup>\* Preview is a bit oudated.</sup>
+<sup>Preview is a bit oudated.</sup>
 
 # Jumar's Tindahan
 > A sample cart app written in Alt.
 
-This project was mainly about testing Flux (Thanks, Alt, this was easier with you), Immutable, and also an approach to placing css along with its respective components (check the components). At the time I was compiling the LESS files, I have no further proof (nor do I know much about file systems and what node or LESS does), but it was obvious that the file being compiled was the from cache. The css file (LESS) found in the along with the `Cart` component does is one example. 
+This project was mainly about trying out Flux (Thanks, Alt, this was easier with you), Immutable, and also an approach to placing css along with its respective components (check the components).
+
+**Notes**:
+
+- I think trying to check if the a `Product` exists (by checking `index == -1` from `findIndex`) was useless. It was expected that no `Product` would be removed from `ProductStore`. There would be little to no chance where the `index` would be `-1`.
+- Immutable data structures makes data shit with the user interface easier to maintain and predict.
+- LESS, as of this time of writing, does not support globbing in which I used [*less-plugin-glob*](https://github.com/just-boris/less-plugin-glob) by [**just-boris**](https://github.com/just-boris). I also had to `@import` the main files which is really tedious and non-dry, especially in actual projects.
+- LESS's feat that [everything is a mixin](http://lesscss.org/features/#features-overview-feature-mixins) is pretty neat.
 
 **Tools**
 
-- [React](https://facebook.github.io/react)
+- [React](https://facebook.github.io/react) - UI Library
 - [Alt](https://alt.js.org) - Library based on Flux
-- [Immutable.js](https://facebook.github.io/immutable-js)
+- [Immutable.js](https://facebook.github.io/immutable-js) - Immutable persistent data collections for JS
 
 ## Local Setup
 
