@@ -5,6 +5,10 @@ class CartActions {
     this.dispatch(id);
   }
 
+  decrease(id) {
+    this.dispatch(id);
+  }
+
   remove(id) {
     this.dispatch(id);
   }

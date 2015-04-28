@@ -8,9 +8,9 @@ export default React.createClass({
     var { data } = this.props;
 
     return (
-      !!data.size ? <div> {data.map((product, i) => {
+      !!data.size ? <div className="list"> {data.map((product, i) => {
         return <CartItem data={product} key={i} />
       })} </div>: <CartListEmpty />
     );
   }
-})
+});

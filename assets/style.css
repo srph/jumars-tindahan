@@ -6603,55 +6603,51 @@ body {
   margin-left: -15px;
   margin-right: -15px;
 }
-.cart .box > .list > .name {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+.cart .box > .list > .litem:before,
+.cart .box > .list > .litem:after {
+  content: " ";
+  display: table;
 }
-@media (min-width: 992px) {
-  .cart .box > .list > .name {
-    float: left;
-    width: 41.66666667%;
-  }
+.cart .box > .list > .litem:after {
+  clear: both;
 }
-.cart .box > .list > .price {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+.cart .box > .list > .litem:before,
+.cart .box > .list > .litem:after {
+  content: " ";
+  display: table;
 }
-@media (min-width: 992px) {
-  .cart .box > .list > .price {
-    float: left;
-    width: 16.66666667%;
-  }
+.cart .box > .list > .litem:after {
+  clear: both;
 }
-.cart .box > .list > .qt {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+.cart .box > .list > .item > .name {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  float: left !important;
+  width: 70%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-@media (min-width: 992px) {
-  .cart .box > .list > .qt {
-    float: left;
-    width: 16.66666667%;
-  }
+.cart .box > .list > .item > .name small,
+.cart .box > .list > .item > .name .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
 }
-.cart .box > .list > .options {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+.cart .box > .list > .item > .name small,
+.cart .box > .list > .item > .name .small {
+  font-size: 75%;
 }
-@media (min-width: 992px) {
-  .cart .box > .list > .options {
-    float: left;
-    width: 25%;
-  }
+.cart .box > .list > .item > .options {
+  float: right !important;
+  margin-left: 10%;
+  width: 20%;
 }
-.cart .box > .list > .options > .decrease-btn {
+.cart .box > .list > .item > .options > .decrease-btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -6670,36 +6666,40 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
   color: #ffffff;
   background-color: #f0ad4e;
   border-color: #eea236;
 }
-.cart .box > .list > .options > .decrease-btn:focus,
-.cart .box > .list > .options > .decrease-btn:active:focus,
-.cart .box > .list > .options > .decrease-btn.active:focus,
-.cart .box > .list > .options > .decrease-btn.focus,
-.cart .box > .list > .options > .decrease-btn:active.focus,
-.cart .box > .list > .options > .decrease-btn.active.focus {
+.cart .box > .list > .item > .options > .decrease-btn:focus,
+.cart .box > .list > .item > .options > .decrease-btn:active:focus,
+.cart .box > .list > .item > .options > .decrease-btn.active:focus,
+.cart .box > .list > .item > .options > .decrease-btn.focus,
+.cart .box > .list > .item > .options > .decrease-btn:active.focus,
+.cart .box > .list > .item > .options > .decrease-btn.active.focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.cart .box > .list > .options > .decrease-btn:hover,
-.cart .box > .list > .options > .decrease-btn:focus,
-.cart .box > .list > .options > .decrease-btn.focus {
+.cart .box > .list > .item > .options > .decrease-btn:hover,
+.cart .box > .list > .item > .options > .decrease-btn:focus,
+.cart .box > .list > .item > .options > .decrease-btn.focus {
   color: #333333;
   text-decoration: none;
 }
-.cart .box > .list > .options > .decrease-btn:active,
-.cart .box > .list > .options > .decrease-btn.active {
+.cart .box > .list > .item > .options > .decrease-btn:active,
+.cart .box > .list > .item > .options > .decrease-btn.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.cart .box > .list > .options > .decrease-btn.disabled,
-.cart .box > .list > .options > .decrease-btn[disabled],
-fieldset[disabled] .cart .box > .list > .options > .decrease-btn {
+.cart .box > .list > .item > .options > .decrease-btn.disabled,
+.cart .box > .list > .item > .options > .decrease-btn[disabled],
+fieldset[disabled] .cart .box > .list > .item > .options > .decrease-btn {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -6707,47 +6707,47 @@ fieldset[disabled] .cart .box > .list > .options > .decrease-btn {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.cart .box > .list > .options > .decrease-btn:hover,
-.cart .box > .list > .options > .decrease-btn:focus,
-.cart .box > .list > .options > .decrease-btn.focus,
-.cart .box > .list > .options > .decrease-btn:active,
-.cart .box > .list > .options > .decrease-btn.active,
-.open > .dropdown-toggle.cart .box > .list > .options > .decrease-btn {
+.cart .box > .list > .item > .options > .decrease-btn:hover,
+.cart .box > .list > .item > .options > .decrease-btn:focus,
+.cart .box > .list > .item > .options > .decrease-btn.focus,
+.cart .box > .list > .item > .options > .decrease-btn:active,
+.cart .box > .list > .item > .options > .decrease-btn.active,
+.open > .dropdown-toggle.cart .box > .list > .item > .options > .decrease-btn {
   color: #ffffff;
   background-color: #ec971f;
   border-color: #d58512;
 }
-.cart .box > .list > .options > .decrease-btn:active,
-.cart .box > .list > .options > .decrease-btn.active,
-.open > .dropdown-toggle.cart .box > .list > .options > .decrease-btn {
+.cart .box > .list > .item > .options > .decrease-btn:active,
+.cart .box > .list > .item > .options > .decrease-btn.active,
+.open > .dropdown-toggle.cart .box > .list > .item > .options > .decrease-btn {
   background-image: none;
 }
-.cart .box > .list > .options > .decrease-btn.disabled,
-.cart .box > .list > .options > .decrease-btn[disabled],
-fieldset[disabled] .cart .box > .list > .options > .decrease-btn,
-.cart .box > .list > .options > .decrease-btn.disabled:hover,
-.cart .box > .list > .options > .decrease-btn[disabled]:hover,
-fieldset[disabled] .cart .box > .list > .options > .decrease-btn:hover,
-.cart .box > .list > .options > .decrease-btn.disabled:focus,
-.cart .box > .list > .options > .decrease-btn[disabled]:focus,
-fieldset[disabled] .cart .box > .list > .options > .decrease-btn:focus,
-.cart .box > .list > .options > .decrease-btn.disabled.focus,
-.cart .box > .list > .options > .decrease-btn[disabled].focus,
-fieldset[disabled] .cart .box > .list > .options > .decrease-btn.focus,
-.cart .box > .list > .options > .decrease-btn.disabled:active,
-.cart .box > .list > .options > .decrease-btn[disabled]:active,
-fieldset[disabled] .cart .box > .list > .options > .decrease-btn:active,
-.cart .box > .list > .options > .decrease-btn.disabled.active,
-.cart .box > .list > .options > .decrease-btn[disabled].active,
-fieldset[disabled] .cart .box > .list > .options > .decrease-btn.active {
+.cart .box > .list > .item > .options > .decrease-btn.disabled,
+.cart .box > .list > .item > .options > .decrease-btn[disabled],
+fieldset[disabled] .cart .box > .list > .item > .options > .decrease-btn,
+.cart .box > .list > .item > .options > .decrease-btn.disabled:hover,
+.cart .box > .list > .item > .options > .decrease-btn[disabled]:hover,
+fieldset[disabled] .cart .box > .list > .item > .options > .decrease-btn:hover,
+.cart .box > .list > .item > .options > .decrease-btn.disabled:focus,
+.cart .box > .list > .item > .options > .decrease-btn[disabled]:focus,
+fieldset[disabled] .cart .box > .list > .item > .options > .decrease-btn:focus,
+.cart .box > .list > .item > .options > .decrease-btn.disabled.focus,
+.cart .box > .list > .item > .options > .decrease-btn[disabled].focus,
+fieldset[disabled] .cart .box > .list > .item > .options > .decrease-btn.focus,
+.cart .box > .list > .item > .options > .decrease-btn.disabled:active,
+.cart .box > .list > .item > .options > .decrease-btn[disabled]:active,
+fieldset[disabled] .cart .box > .list > .item > .options > .decrease-btn:active,
+.cart .box > .list > .item > .options > .decrease-btn.disabled.active,
+.cart .box > .list > .item > .options > .decrease-btn[disabled].active,
+fieldset[disabled] .cart .box > .list > .item > .options > .decrease-btn.active {
   background-color: #f0ad4e;
   border-color: #eea236;
 }
-.cart .box > .list > .options > .decrease-btn .badge {
+.cart .box > .list > .item > .options > .decrease-btn .badge {
   color: #f0ad4e;
   background-color: #ffffff;
 }
-.cart .box > .list > .options > .delete-btn {
+.cart .box > .list > .item > .options > .remove-btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -6766,36 +6766,41 @@ fieldset[disabled] .cart .box > .list > .options > .decrease-btn.active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
   color: #ffffff;
   background-color: #d9534f;
   border-color: #d43f3a;
+  margin-left: 5px;
 }
-.cart .box > .list > .options > .delete-btn:focus,
-.cart .box > .list > .options > .delete-btn:active:focus,
-.cart .box > .list > .options > .delete-btn.active:focus,
-.cart .box > .list > .options > .delete-btn.focus,
-.cart .box > .list > .options > .delete-btn:active.focus,
-.cart .box > .list > .options > .delete-btn.active.focus {
+.cart .box > .list > .item > .options > .remove-btn:focus,
+.cart .box > .list > .item > .options > .remove-btn:active:focus,
+.cart .box > .list > .item > .options > .remove-btn.active:focus,
+.cart .box > .list > .item > .options > .remove-btn.focus,
+.cart .box > .list > .item > .options > .remove-btn:active.focus,
+.cart .box > .list > .item > .options > .remove-btn.active.focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.cart .box > .list > .options > .delete-btn:hover,
-.cart .box > .list > .options > .delete-btn:focus,
-.cart .box > .list > .options > .delete-btn.focus {
+.cart .box > .list > .item > .options > .remove-btn:hover,
+.cart .box > .list > .item > .options > .remove-btn:focus,
+.cart .box > .list > .item > .options > .remove-btn.focus {
   color: #333333;
   text-decoration: none;
 }
-.cart .box > .list > .options > .delete-btn:active,
-.cart .box > .list > .options > .delete-btn.active {
+.cart .box > .list > .item > .options > .remove-btn:active,
+.cart .box > .list > .item > .options > .remove-btn.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.cart .box > .list > .options > .delete-btn.disabled,
-.cart .box > .list > .options > .delete-btn[disabled],
-fieldset[disabled] .cart .box > .list > .options > .delete-btn {
+.cart .box > .list > .item > .options > .remove-btn.disabled,
+.cart .box > .list > .item > .options > .remove-btn[disabled],
+fieldset[disabled] .cart .box > .list > .item > .options > .remove-btn {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -6803,43 +6808,43 @@ fieldset[disabled] .cart .box > .list > .options > .delete-btn {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.cart .box > .list > .options > .delete-btn:hover,
-.cart .box > .list > .options > .delete-btn:focus,
-.cart .box > .list > .options > .delete-btn.focus,
-.cart .box > .list > .options > .delete-btn:active,
-.cart .box > .list > .options > .delete-btn.active,
-.open > .dropdown-toggle.cart .box > .list > .options > .delete-btn {
+.cart .box > .list > .item > .options > .remove-btn:hover,
+.cart .box > .list > .item > .options > .remove-btn:focus,
+.cart .box > .list > .item > .options > .remove-btn.focus,
+.cart .box > .list > .item > .options > .remove-btn:active,
+.cart .box > .list > .item > .options > .remove-btn.active,
+.open > .dropdown-toggle.cart .box > .list > .item > .options > .remove-btn {
   color: #ffffff;
   background-color: #c9302c;
   border-color: #ac2925;
 }
-.cart .box > .list > .options > .delete-btn:active,
-.cart .box > .list > .options > .delete-btn.active,
-.open > .dropdown-toggle.cart .box > .list > .options > .delete-btn {
+.cart .box > .list > .item > .options > .remove-btn:active,
+.cart .box > .list > .item > .options > .remove-btn.active,
+.open > .dropdown-toggle.cart .box > .list > .item > .options > .remove-btn {
   background-image: none;
 }
-.cart .box > .list > .options > .delete-btn.disabled,
-.cart .box > .list > .options > .delete-btn[disabled],
-fieldset[disabled] .cart .box > .list > .options > .delete-btn,
-.cart .box > .list > .options > .delete-btn.disabled:hover,
-.cart .box > .list > .options > .delete-btn[disabled]:hover,
-fieldset[disabled] .cart .box > .list > .options > .delete-btn:hover,
-.cart .box > .list > .options > .delete-btn.disabled:focus,
-.cart .box > .list > .options > .delete-btn[disabled]:focus,
-fieldset[disabled] .cart .box > .list > .options > .delete-btn:focus,
-.cart .box > .list > .options > .delete-btn.disabled.focus,
-.cart .box > .list > .options > .delete-btn[disabled].focus,
-fieldset[disabled] .cart .box > .list > .options > .delete-btn.focus,
-.cart .box > .list > .options > .delete-btn.disabled:active,
-.cart .box > .list > .options > .delete-btn[disabled]:active,
-fieldset[disabled] .cart .box > .list > .options > .delete-btn:active,
-.cart .box > .list > .options > .delete-btn.disabled.active,
-.cart .box > .list > .options > .delete-btn[disabled].active,
-fieldset[disabled] .cart .box > .list > .options > .delete-btn.active {
+.cart .box > .list > .item > .options > .remove-btn.disabled,
+.cart .box > .list > .item > .options > .remove-btn[disabled],
+fieldset[disabled] .cart .box > .list > .item > .options > .remove-btn,
+.cart .box > .list > .item > .options > .remove-btn.disabled:hover,
+.cart .box > .list > .item > .options > .remove-btn[disabled]:hover,
+fieldset[disabled] .cart .box > .list > .item > .options > .remove-btn:hover,
+.cart .box > .list > .item > .options > .remove-btn.disabled:focus,
+.cart .box > .list > .item > .options > .remove-btn[disabled]:focus,
+fieldset[disabled] .cart .box > .list > .item > .options > .remove-btn:focus,
+.cart .box > .list > .item > .options > .remove-btn.disabled.focus,
+.cart .box > .list > .item > .options > .remove-btn[disabled].focus,
+fieldset[disabled] .cart .box > .list > .item > .options > .remove-btn.focus,
+.cart .box > .list > .item > .options > .remove-btn.disabled:active,
+.cart .box > .list > .item > .options > .remove-btn[disabled]:active,
+fieldset[disabled] .cart .box > .list > .item > .options > .remove-btn:active,
+.cart .box > .list > .item > .options > .remove-btn.disabled.active,
+.cart .box > .list > .item > .options > .remove-btn[disabled].active,
+fieldset[disabled] .cart .box > .list > .item > .options > .remove-btn.active {
   background-color: #d9534f;
   border-color: #d43f3a;
 }
-.cart .box > .list > .options > .delete-btn .badge {
+.cart .box > .list > .item > .options > .remove-btn .badge {
   color: #d9534f;
   background-color: #ffffff;
 }

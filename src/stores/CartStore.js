@@ -50,16 +50,6 @@ class CartStore {
     });
   }
 
-  onRemove(id) {
-    try {
-      const index = this.getProductIndex(id);
-    } catch(e) {
-      return false;
-    }
-
-    this.cart = this.cart.remove(index, 1);
-  }
-
   onClear() {
     // Simply reassign our `carts` state
     // to `_carts` since we created a snapshot
@@ -81,6 +71,12 @@ class CartStore {
     this.cart = this.cart.get(i).get('quantity') > 1
       ? this.cart.update(i, product => product.update('quantity', v => v + 1))
       : this.cart.delete(i);
+  }
+
+  onRemove(id) {
+    const i = this.getProductIndex(id);
+
+    this.cart = this.cart.delete(i);
   }
 
   /**

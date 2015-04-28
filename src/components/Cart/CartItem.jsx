@@ -1,4 +1,5 @@
 import React from 'react';
+import CartItemOptions from './CartItemOptions';
 
 export default React.createClass({
   render() {
@@ -7,10 +8,10 @@ export default React.createClass({
     var qty = data.get('quantity');
 
     return (
-      <h5>
-        {name} <small>({qty} {qty > 1 ? 'pcs' : 'pc'})</small>
+      <div className="item">
+        <h5 className="name">{name} <small>({qty} {qty > 1 ? 'pcs' : 'pc'})</small></h5>
         <CartItemOptions id={data.get('id')} />
-      </h5>
+      </div>
     )
   }
 })

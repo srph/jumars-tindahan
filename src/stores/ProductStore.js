@@ -48,7 +48,23 @@ class ProductStore {
     });
   }
 
-  onDecrease() {
+  onDecrease(id) {
+    const i = this.getProductIndex(id);
+
+    this.products = this.products.update(i, (product) => {
+      return product.set('stock', product.get('stock') + 1);
+    });
+  }
+
+  onRemove(id) {
+    const i = this.getProductIndex(id);
+
+    this.products = this.products.update(i, (product) => {
+      return product.set('stock', snapshot.get(i).get('stock'));
+    });
+  }
+
+  onClear() {
     // Simply reassign our `products` state
     // to `_products` since we created a snapshot
     // of its init state on the class constructor
@@ -65,13 +81,6 @@ class ProductStore {
 
     // We're not updating anything.
     return false;
-  }
-
-  onRemove(id) {
-    this.products = this.products
-      .update(this.getProductIndex(id), (product) => {
-        return product.set('stock', product.get('stock') + 1);
-      });
   }
 
   /**

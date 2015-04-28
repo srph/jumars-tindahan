@@ -39,33 +39,33 @@
     .row;
   }
 
-  .box > .list > .name {
-    .make-md-column(5);
-    // ellipsis sshit
+  .box > .list > .litem { .clearfix; }
+
+  .box > .list > .item > .name {
+    .h4;
+    .pull-left;
+    width: 70%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  .box > .list > .price {
-    .make-md-column(2);
+  .box > .list > .item > .options {
+    .pull-right;
+    margin-left: 10%;
+    width: 20%;
   }
 
-  .box > .list > .qt {
-    .make-md-column(2);
-  }
-
-  .box > .list > .options {
-    .make-md-column(3);
-  }
-
-  .box > .list > .options > .decrease-btn {
+  .box > .list > .item > .options > .decrease-btn {
     .btn;
     .btn-xs;
     .btn-warning;
   }
 
-  .box > .list > .options > .delete-btn {
+  .box > .list > .item > .options > .remove-btn {
     .btn;
     .btn-xs;
     .btn-danger;
+    margin-left: 5px;
   }
 
   /**
