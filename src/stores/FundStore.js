@@ -1,6 +1,7 @@
 import alt from '../alt';
 import ProductStore from './ProductStore';
 import CartActions from '../actions/CartActions';
+import CartStore from './CartStore';
 
 // Initial funds, used for initial assignment.
 // Used to resture funds on clear if `remaining`
@@ -43,6 +44,14 @@ class FundStore {
     var product = ProductStore.getState().products.get(index);
 
     this.funds = this.funds + product.get('price');
+  }
+
+  onRemove(id) {
+    const i = ProductStore.getProductIndex(id);
+    var product = ProductStore.getState().products.get(i);
+    var cart = CartStore.getState().cart.get(i);
+
+    this.funds = this.funds + (product.get('price') * cart.get('quantity'));
   }
 
   onClear() {

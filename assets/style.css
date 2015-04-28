@@ -6284,8 +6284,6 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-.cart .box > .list:before,
-.cart .box > .list:after,
 .product > .list > .item > .body:before,
 .product > .list > .item > .body:after {
   content: " ";
@@ -6306,7 +6304,6 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.cart .box > .list:after,
 .product > .list > .item > .body:after {
   clear: both;
 }
@@ -6600,23 +6597,26 @@ body {
   text-align: center;
 }
 .cart .box > .list {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.cart .box > .list > .litem:before,
-.cart .box > .list > .litem:after {
+.cart .box > .list > .item {
+  margin-bottom: 10px;
+}
+.cart .box > .list > .item:before,
+.cart .box > .list > .item:after {
   content: " ";
   display: table;
 }
-.cart .box > .list > .litem:after {
+.cart .box > .list > .item:after {
   clear: both;
 }
-.cart .box > .list > .litem:before,
-.cart .box > .list > .litem:after {
+.cart .box > .list > .item:before,
+.cart .box > .list > .item:after {
   content: " ";
   display: table;
 }
-.cart .box > .list > .litem:after {
+.cart .box > .list > .item:after {
   clear: both;
 }
 .cart .box > .list > .item > .name {

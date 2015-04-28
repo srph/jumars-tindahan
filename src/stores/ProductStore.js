@@ -58,9 +58,10 @@ class ProductStore {
 
   onRemove(id) {
     const i = this.getProductIndex(id);
+    var init = snapshot == undefined ? initial : snapshot;
 
     this.products = this.products.update(i, (product) => {
-      return product.set('stock', snapshot.get(i).get('stock'));
+      return product.set('stock',  init.get(i).get('stock'));
     });
   }
 
