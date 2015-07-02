@@ -9,8 +9,8 @@ This project was mainly about trying out Flux (Thanks, Alt, this was easier with
 
 **Notes**:
 
-- I think trying to check if the a `Product` exists (by checking `index == -1` from `findIndex`) was useless. It was expected that no `Product` would be removed from `ProductStore`. There would be little to no chance where the `index` would be `-1`.
-- Immutable data structures makes data shit with the user interface easier to maintain and predict.
+- I think trying to check if a `Product` exists (by checking `index == -1` from `findIndex`) was useless. It was expected that no non-existent `Product` would be removed from `ProductStore`.
+- Immutable data structures makes data easier to maintain and predict.
 - LESS, as of this time of writing, does not support globbing in which I used [*less-plugin-glob*](https://github.com/just-boris/less-plugin-glob) by [**just-boris**](https://github.com/just-boris). I also had to `@import` the main files which is really tedious and non-dry, especially in actual projects.
 - LESS's feat that [everything is a mixin](http://lesscss.org/features/#features-overview-feature-mixins) is pretty neat.
 - Flux is so awesome.
