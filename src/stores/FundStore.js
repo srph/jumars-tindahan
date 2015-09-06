@@ -9,7 +9,7 @@ import CartStore from './CartStore';
 const initial = 1571.69;
 // Remaining funds on last checkout. Saved on checkout,
 // and also restored on clear (if it's, at least, defined or assigned).
-var remaining;
+let remaining;
 
 class FundStore {
   constructor() {
@@ -47,11 +47,10 @@ class FundStore {
   }
 
   onRemove(id) {
-    const i = ProductStore.getProductIndex(id);
-    var product = ProductStore.getState().products.get(i);
-    var cart = CartStore.getState().cart.get(i);
+    const product = ProductStore.getState().products.get(ProductStore.getProductIndex(id));
+    const cart = CartStore.getState().cart.get(CartStore.getProductIndex(id));
 
-    this.funds = this.funds + (product.get('price') * cart.get('quantity'));
+    this.funds += product.get('price') * cart.get('quantity');
   }
 
   onClear() {
