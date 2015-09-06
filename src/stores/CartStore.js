@@ -11,6 +11,8 @@ class CartStore {
     this._cart = new Immutable.List();
     this.cart = this._cart;
     this.bindActions(CartActions);
+    
+    this.exportPublicMethods({ getProductIndex: this.getProductIndex.bind(this) });
   }
 
   onAdd(id) {
